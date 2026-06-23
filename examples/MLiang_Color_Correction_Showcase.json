@@ -1,0 +1,234 @@
+{
+  "id": "mliang-color-correction-showcase",
+  "revision": 0,
+  "last_node_id": 4,
+  "last_link_id": 3,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "LoadImage",
+      "pos": [
+        -760,
+        -120
+      ],
+      "size": [
+        360,
+        320
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            1
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "example.png",
+        "image"
+      ]
+    },
+    {
+      "id": 2,
+      "type": "MLiangColorCorrection",
+      "title": "MLiang Color Correction",
+      "pos": [
+        -300,
+        -180
+      ],
+      "size": [
+        420,
+        520
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            2,
+            3
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MLiangColorCorrection"
+      },
+      "widgets_values": [
+        0.0,
+        0.0,
+        1.08,
+        1.08,
+        1.0,
+        0.04,
+        0.0,
+        0.0,
+        0.04,
+        -0.03,
+        1.0
+      ]
+    },
+    {
+      "id": 3,
+      "type": "PreviewImage",
+      "title": "Preview Corrected Image",
+      "pos": [
+        220,
+        -180
+      ],
+      "size": [
+        420,
+        420
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 2
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 4,
+      "type": "SaveImage",
+      "title": "Save Corrected Image",
+      "pos": [
+        220,
+        300
+      ],
+      "size": [
+        420,
+        180
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 3
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "MLiang_Color_Correction"
+      ]
+    }
+  ],
+  "links": [
+    [
+      1,
+      1,
+      0,
+      2,
+      0,
+      "IMAGE"
+    ],
+    [
+      2,
+      2,
+      0,
+      3,
+      0,
+      "IMAGE"
+    ],
+    [
+      3,
+      2,
+      0,
+      4,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [
+    {
+      "id": 1,
+      "title": "01 Input Image",
+      "bounding": [
+        -800,
+        -220,
+        440,
+        620
+      ],
+      "color": "#305f85",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 2,
+      "title": "02 MLiang Color Correction",
+      "bounding": [
+        -340,
+        -260,
+        500,
+        660
+      ],
+      "color": "#7a5c99",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 3,
+      "title": "03 Preview and Save",
+      "bounding": [
+        180,
+        -260,
+        500,
+        800
+      ],
+      "color": "#5b8c5a",
+      "font_size": 24,
+      "flags": {}
+    }
+  ],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 1.0,
+      "offset": [
+        900,
+        360
+      ]
+    },
+    "workflow_notes": "Clean showcase workflow for MLiang Color Correction. Load an image, adjust color parameters, preview, and save."
+  },
+  "version": 0.4
+}
