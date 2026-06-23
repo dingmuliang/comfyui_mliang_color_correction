@@ -94,12 +94,21 @@ comfyui_mliang_color_correction/
 ├── README.md
 ├── LICENSE
 ├── assets/
-│   └── MLiang_Color_Correction_Showcase.png
+│   ├── MLiang_Color_Correction_Showcase.png
+│   └── wechat-pay.png
 └── examples/
     └── MLiang_Color_Correction_Showcase.json
 ```
 
+---
+
+## Community
+
+| Support |
+|---------|
+| ![wechat](assets/wechat-pay.png) |
+| WeChat Pay |
+
 ## License
 
 MIT License
-
