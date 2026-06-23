@@ -23,3 +23,13 @@ Two small image color nodes for ComfyUI.
   - strength
 
 Both nodes accept and return ComfyUI `IMAGE` tensors in `[batch, height, width, channels]` format.
+
+## Example Workflow
+
+The clean showcase workflow is included here:
+
+`examples/MLiang_Color_Correction_Showcase.json`
+
+It uses only built-in ComfyUI image nodes plus `MLiang Color Correction`:
+
+`Load Image -> MLiang Color Correction -> Preview Image / Save Image`
